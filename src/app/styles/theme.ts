@@ -31,21 +31,23 @@ const colors: DefaultTheme['colors'] = {
   },
 };
 
+const lightCore: DefaultTheme['core'] = {
+  colorPrimary: colors.base.base1000,
+  colorSecondary: '#A18A68',
+  colorTextPrimary: colors.base.base1000,
+  colorTextSecondary: colors.base.base500,
+  colorDisabled: colors.base.base50,
+  colorErrorPrimary: colors.redErrors.primary,
+  colorSystem: 'red',
+  colorAccentPrimary: 'red',
+  colorBackground: colors.base.base0,
+  colorSurface: 'red',
+  colorDivider: 'red',
+};
+
 export const lightTheme: DefaultTheme = {
   colors,
-  core: {
-    colorPrimary: colors.base.base0,
-    colorSecondary: '#A18A68',
-    colorTextPrimary: colors.base.base1000,
-    colorTextSecondary: colors.base.base500,
-    colorDisabled: colors.base.base50,
-    colorErrorPrimary: colors.redErrors.primary,
-    colorSystem: 'red',
-    colorAccentPrimary: 'red',
-    colorBackground: colors.base.base200,
-    colorSurface: 'red',
-    colorDivider: 'red',
-  },
+  core: lightCore,
   borderRadius: {
     roundedNon: '0px',
     roundedXS: '4px',
@@ -63,8 +65,12 @@ export const lightTheme: DefaultTheme = {
     maxMobile: `${breakpoints.maxMobile}px`,
     maxTablets: `${breakpoints.maxTablets}px`,
     maxLaptops: `${breakpoints.maxLaptops}px`,
-    maxOldDesktops: `${breakpoints.maxOldDesktops}px`,
     maxDesktops: `${breakpoints.maxDesktops}px`,
+  },
+  components: {
+    Tabs: {
+      colorBorderSecondary: lightCore.colorTextPrimary,
+    },
   },
 };
 
@@ -100,7 +106,6 @@ export const DarkTheme: DefaultTheme = {
     maxMobile: `${breakpoints.maxMobile}px`,
     maxTablets: `${breakpoints.maxTablets}px`,
     maxLaptops: `${breakpoints.maxLaptops}px`,
-    maxOldDesktops: `${breakpoints.maxOldDesktops}px`,
     maxDesktops: `${breakpoints.maxDesktops}px`,
   },
 };

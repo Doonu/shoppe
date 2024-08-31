@@ -31,6 +31,19 @@ declare module 'styled-components' {
         redErrors900: string;
       };
     };
+    core: {
+      colorPrimary: string;
+      colorSecondary: string;
+      colorTextPrimary: string;
+      colorTextSecondary: string;
+      colorDisabled: string;
+      colorErrorPrimary: string;
+      colorSystem: string;
+      colorAccentPrimary: string;
+      colorBackground: string;
+      colorSurface: string;
+      colorDivider: string;
+    };
     borderRadius: {
       roundedNon: string;
       roundedXS: string;
@@ -48,7 +61,6 @@ declare module 'styled-components' {
       maxMobile: string;
       maxTablets: string;
       maxLaptops: string;
-      maxOldDesktops: string;
       maxDesktops: string;
     };
   }

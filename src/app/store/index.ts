@@ -28,22 +28,22 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const setupStore = () =>
   configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) =>
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
-        serializableCheck: {
-          ignoredActions: [
-            FLUSH,
-            REHYDRATE,
-            PAUSE,
-            PERSIST,
-            PURGE,
-            REGISTER,
-            'acts/getPrintForm/fulfilled', // Игнорирование Blob action
-          ],
-        },
-      }),
-  });
+    serializableCheck: {
+      ignoredActions: [
+        FLUSH,
+        REHYDRATE,
+        PAUSE,
+        PERSIST,
+        PURGE,
+        REGISTER,
+        'acts/getPrintForm/fulfilled', // Игнорирование Blob action
+      ],
+    },
+  }),
+});
 
 export const store = setupStore();
 

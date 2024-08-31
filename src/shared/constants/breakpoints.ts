@@ -1,7 +1,6 @@
 export const breakpoints = {
-  maxMobile: 480,
+  maxMobile: 390,
   maxTablets: 768,
   maxLaptops: 1024,
-  maxOldDesktops: 1200,
-  maxDesktops: 1400,
+  maxDesktops: 1250,
 };

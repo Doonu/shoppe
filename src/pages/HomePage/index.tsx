@@ -3,7 +3,6 @@ import { faik } from '@shared/lib';
 import { shared } from '@shared/strings';
 import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const { t, i18n } = useTranslation();
@@ -18,8 +17,6 @@ const HomePage = () => {
     <div>
       <ThemeSwitcher />
       <Button onClick={toggle}>{t(shared.translate)}</Button>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
     </div>
   );
 };

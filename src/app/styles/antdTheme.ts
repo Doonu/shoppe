@@ -11,7 +11,11 @@ export const antdTheme = (theme: DefaultTheme): ThemeConfig => ({
   },
   components: {
     Select: {
-      colorBgContainer: theme.core.colorBackground,
+      colorBgContainer: theme.core.colorSecondary,
+    },
+    Menu: {
+      itemSelectedBg: 'transparent',
+      itemSelectedColor: theme.core.colorSecondary,
     },
   },
 });

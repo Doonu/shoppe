@@ -1,20 +1,27 @@
-import { IRoutes } from '@app/router/IRoutes';
 import NotFoundPage from '@pages/NotFoundPage';
 import React, { lazy } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+
+import { ERoutes } from './ERoutes';
+import DefaultScreen from '../layout/DefaultScreen';
 
 const HomePageLazy = lazy(() => import('../../pages/HomePage'));
-const AboutPageLazy = lazy(() => import('../../pages/AboutPage'));
+const AuthPageLazy = lazy(() => import('../../pages/AuthPage'));
 
 export const publicRoutes = createBrowserRouter([
   {
-    path: IRoutes.HOME_PAGE,
-    element: <HomePageLazy />,
+    path: ERoutes.HOME_PAGE,
+    element: <DefaultScreen />,
     errorElement: <NotFoundPage />,
-    children: [],
+    children: [{ path: ERoutes.HOME_PAGE, element: <AuthPageLazy />, children: [] }],
   },
+]);
+
+export const privateRoutes = createBrowserRouter([
   {
-    path: '/About',
-    element: <AboutPageLazy />,
+    path: ERoutes.HOME_PAGE,
+    element: <DefaultScreen />,
+    errorElement: <NotFoundPage />,
+    children: [{ path: ERoutes.HOME_PAGE, element: <HomePageLazy />, children: [] }],
   },
 ]);

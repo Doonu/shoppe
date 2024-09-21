@@ -1,52 +1,21 @@
 import { breakpoints } from '@shared/constants';
 import { DefaultTheme } from 'styled-components';
 
-const colors: DefaultTheme['colors'] = {
-  base: {
-    base0: '#FFFFFF',
-    base50: '#EFEFEF',
-    base100: '#E6E7E6',
-    base200: '#D0D1D0',
-    base300: '#B0B1AF',
-    base400: '#888987',
-    base500: '#707070',
-    base600: '#5D5E5C',
-    base700: '#4E504E',
-    base800: '#444644',
-    base900: '#404140',
-    base950: '#262626',
-    base1000: '#1C1C1C',
-  },
-  redErrors: {
-    redErrors50: '#FFF2F0',
-    redErrors100: '#FFE0DD',
-    redErrors200: '#FFC7C1',
-    redErrors300: '#FFA095',
-    redErrors400: '#FF6A59',
-    redErrors500: '#FF3C26',
-    redErrors600: '#FC1F06',
-    primary: '#C51400',
-    redErrors800: '#AF1605',
-    redErrors900: '#90190C',
-  },
-};
-
 const lightCore: DefaultTheme['core'] = {
-  colorPrimary: colors.base.base1000,
+  colorPrimary: '#1C1C1C',
   colorSecondary: '#A18A68',
-  colorTextPrimary: colors.base.base1000,
-  colorTextSecondary: colors.base.base500,
-  colorDisabled: colors.base.base50,
-  colorErrorPrimary: colors.redErrors.primary,
+  colorTextPrimary: '#1C1C1C',
+  colorTextSecondary: '#707070',
+  colorDisabled: '#EFEFEF',
+  colorErrorPrimary: '#C51400',
   colorSystem: 'red',
   colorAccentPrimary: 'red',
-  colorBackground: colors.base.base0,
+  colorBackground: '#FFFFFF',
   colorSurface: 'red',
   colorDivider: 'red',
 };
 
 export const lightTheme: DefaultTheme = {
-  colors,
   core: lightCore,
   borderRadius: {
     roundedNon: '0px',
@@ -75,7 +44,6 @@ export const lightTheme: DefaultTheme = {
 };
 
 export const DarkTheme: DefaultTheme = {
-  colors,
   core: {
     colorPrimary: 'blue',
     colorSecondary: 'blue',

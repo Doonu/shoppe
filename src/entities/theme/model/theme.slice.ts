@@ -1,9 +1,10 @@
 import { lightTheme, DarkTheme } from '@app/styles';
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-import type { ThemeInitialState, ThemeVariant } from './theme.type';
+import type { ThemeInitialState, ThemeVariant } from './theme.types';
 import { themePick } from '../lib/themePick';
 
+// TODO - убрать themeOptions
 const initialState: ThemeInitialState = {
   themeType: 'light',
   themeOptions: lightTheme,

@@ -1,9 +1,8 @@
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-
 import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import { BuildOptions } from './build.types';
 
@@ -28,8 +27,8 @@ export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInst
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
+    // new BundleAnalyzerPlugin({
+    //   openAnalyzer: false,
+    // }),
   ];
 }

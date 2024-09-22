@@ -1,6 +1,6 @@
 import NotFoundPage from '@pages/NotFoundPage';
 import React, { lazy } from 'react';
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import { ERoutes } from './ERoutes';
 import DefaultScreen from '../layout/DefaultScreen';
@@ -22,6 +22,19 @@ export const privateRoutes = createBrowserRouter([
     path: ERoutes.HOME_PAGE,
     element: <DefaultScreen />,
     errorElement: <NotFoundPage />,
-    children: [{ path: ERoutes.HOME_PAGE, element: <HomePageLazy />, children: [] }],
+    children: [
+      {
+        path: ERoutes.HOME_PAGE,
+        element: <HomePageLazy />,
+      },
+      {
+        path: '/order',
+        element: <div>order</div>,
+      },
+      {
+        path: '/order/:id',
+        element: <div>order id</div>,
+      },
+    ],
   },
 ]);

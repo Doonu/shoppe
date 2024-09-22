@@ -17,13 +17,9 @@ const Header = () => {
 
   return (
     <SHeader>
-      <BurgerMenu isOpen={isOpenBurgerMenu} onClose={handlerOpenMenu} />
+      {isTablets && <BurgerMenu isOpen={isOpenBurgerMenu} onClose={handlerOpenMenu} />}
       <Logo />
-      {isTablets && (
-        <div onClick={handlerOpenMenu}>
-          <BurgerMenuIcon />
-        </div>
-      )}
+      {isTablets && <BurgerMenuIcon onClick={handlerOpenMenu} />}
       {!isTablets && <Menu />}
     </SHeader>
   );

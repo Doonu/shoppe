@@ -1,6 +1,6 @@
 import { DarkTheme, lightTheme } from '@app/styles';
 
-import type { ThemeVariant } from '../model/theme.type';
+import type { ThemeVariant } from '../model/theme.types';
 
 export const themePick = (themeType: ThemeVariant) => {
   switch (themeType) {

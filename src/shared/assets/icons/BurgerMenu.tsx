@@ -1,7 +1,14 @@
 import React, { FC, SVGProps } from 'react';
 
-export const BurgerMenu: FC<SVGProps<SVGSVGElement>> = () => (
-  <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const BurgerMenu: FC<SVGProps<SVGSVGElement>> = (props) => (
+  <svg
+    width="21"
+    height="17"
+    viewBox="0 0 21 17"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M1.0545 2.87494L19.7976 2.87494C20.1425 2.87494 20.4222 2.45491 20.422 1.93747C20.4218 1.41995 20.1418 1 19.7969 1L1.05377 1C0.708884 1 0.429179 1.42003 0.42938 1.93747C0.429581 2.45491 0.709664 2.87494 1.0545 2.87494Z"
       fill="black"

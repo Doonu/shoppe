@@ -1,6 +1,8 @@
 import { breakpoints } from '@shared/constants';
 import { DefaultTheme } from 'styled-components';
 
+// TODO - добавить размеры (Header)
+
 const lightCore: DefaultTheme['core'] = {
   colorPrimary: '#1C1C1C',
   colorSecondary: '#A18A68',

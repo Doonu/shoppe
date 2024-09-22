@@ -2,7 +2,7 @@ import { theme } from '@shared/strings';
 import { SelectProps } from 'antd';
 import type { TFunction } from 'i18next';
 
-import type { ThemeVariant } from '../model/theme.type';
+import type { ThemeVariant } from '../model/theme.types';
 
 export const OptionsTheme = (t: TFunction): SelectProps['options'] => [
   {

@@ -36,6 +36,7 @@
       "files": ["webpack.config.ts"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",
+        "max-len": "off",
         "import/no-extraneous-dependencies": [
           "error",
           {
@@ -60,6 +61,8 @@
   },
   "rules": {
     "react/no-unstable-nested-components": "off",
+    "object-curly-newline": "off",
+    "implicit-arrow-linebreak": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
@@ -70,6 +73,7 @@
     "react/jsx-key": "error",
     "react/destructuring-assignment": "off",
     "import/extensions": "off",
+    "no-param-reassign":"off",
     "import/prefer-default-export": "off",
     "no-mixed-spaces-and-tabs": "error",
     "no-console": "warn",
@@ -87,12 +91,6 @@
       {
         "endOfLine": "auto",
         "singleQuote": true
-      }
-    ],
-    "max-len": [
-      "error",
-      {
-        "code": 100
       }
     ],
     "import/order": [

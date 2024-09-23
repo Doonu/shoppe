@@ -17,6 +17,20 @@ const lightCore: DefaultTheme['core'] = {
   colorDivider: 'red',
 };
 
+const darkCore: DefaultTheme['core'] = {
+  colorPrimary: '#ffffff',
+  colorSecondary: '#A18A68',
+  colorTextPrimary: '#ffffff',
+  colorTextSecondary: '#3D3D3D',
+  colorDisabled: '#EFEFEF',
+  colorErrorPrimary: '#C51400',
+  colorSystem: 'red',
+  colorAccentPrimary: 'red',
+  colorBackground: '#000000',
+  colorSurface: 'red',
+  colorDivider: 'red',
+};
+
 export const lightTheme: DefaultTheme = {
   core: lightCore,
   borderRadius: {
@@ -38,27 +52,10 @@ export const lightTheme: DefaultTheme = {
     maxLaptops: `${breakpoints.maxLaptops}px`,
     maxDesktops: `${breakpoints.maxDesktops}px`,
   },
-  components: {
-    Tabs: {
-      colorBorderSecondary: lightCore.colorTextPrimary,
-    },
-  },
 };
 
 export const DarkTheme: DefaultTheme = {
-  core: {
-    colorPrimary: 'blue',
-    colorSecondary: 'blue',
-    colorTextPrimary: 'blue',
-    colorTextSecondary: 'blue',
-    colorDisabled: 'blue',
-    colorErrorPrimary: 'blue',
-    colorSystem: 'blue',
-    colorAccentPrimary: 'blue',
-    colorBackground: 'blue',
-    colorSurface: 'blue',
-    colorDivider: 'blue',
-  },
+  core: darkCore,
   borderRadius: {
     roundedNon: '0px',
     roundedXS: '4px',

@@ -1,7 +1,7 @@
 import { ThemeSwitcher } from '@entities/theme';
-import { faik } from '@shared/lib';
+import { validateValue } from '@shared/lib';
 import { shared } from '@shared/strings';
-import { Button } from 'antd';
+import { Button } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ const HomePage = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
 
-  faik('f');
+  validateValue(100);
 
   const toggle = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');

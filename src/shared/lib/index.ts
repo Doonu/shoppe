@@ -1,1 +1,1 @@
-export { faik } from './faik';
+export { validateValue } from './validateValue/validateValue';

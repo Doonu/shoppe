@@ -17,5 +17,8 @@ export const antdTheme = (theme: DefaultTheme): ThemeConfig => ({
       itemSelectedBg: 'transparent',
       itemSelectedColor: theme.core.colorSecondary,
     },
+    Button: {
+      defaultBg: theme.core.colorBackground,
+    },
   },
 });

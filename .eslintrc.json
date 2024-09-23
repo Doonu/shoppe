@@ -62,6 +62,8 @@
   "rules": {
     "react/no-unstable-nested-components": "off",
     "object-curly-newline": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/unbound-method": "off",
     "implicit-arrow-linebreak": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "react/react-in-jsx-scope": "off",

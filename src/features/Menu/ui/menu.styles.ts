@@ -1,5 +1,7 @@
 import { Menu as MenuAntd } from 'antd';
 import styled from 'styled-components';
+import { Cart, Search, User } from '@shared/assets';
+import { Tabs } from '@shared/ui';
 
 export const SFutures = styled.div`
   display: flex;
@@ -28,6 +30,12 @@ export const SDivider = styled.div`
   }
 `;
 
+export const STabs = styled(Tabs)`
+  &.ant-tabs-top > .ant-tabs-nav {
+    height: 70px;
+  }
+`;
+
 export const SMenuAntd = styled(MenuAntd)`
   &.ant-menu {
     width: 100%;
@@ -45,3 +53,15 @@ export const SMenuAntd = styled(MenuAntd)`
     justify-content: center;
   }
 `;
+
+export const SearchIcon = styled(Search).attrs(({ theme }) => ({
+  color: theme.core.colorPrimary,
+}))``;
+
+export const CartIcon = styled(Cart).attrs(({ theme }) => ({
+  color: theme.core.colorPrimary,
+}))``;
+
+export const UserIcon = styled(User).attrs(({ theme }) => ({
+  color: theme.core.colorPrimary,
+}))``;

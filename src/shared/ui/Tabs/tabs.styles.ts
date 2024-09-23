@@ -8,5 +8,14 @@ export const STabs = styled(Tabs)`
 
   &.ant-tabs-top > .ant-tabs-nav {
     margin: 0 !important;
+    padding: 0;
+  }
+
+  &.ant-tabs-nav-list {
+    height: 50px;
+  }
+
+  & .ant-tabs-tab {
+    padding: 0;
   }
 `;

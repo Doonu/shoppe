@@ -1,9 +1,17 @@
-import { Cart, Search, User } from '@shared/assets';
 import { useDevice } from '@shared/hooks';
 import { Tabs } from '@shared/ui';
 import React from 'react';
 
-import { SDivider, SFutures, SMenu, SMenuAntd } from './menu.styles';
+import {
+  CartIcon,
+  SDivider,
+  SearchIcon,
+  SFutures,
+  SMenu,
+  SMenuAntd,
+  STabs,
+  UserIcon,
+} from './menu.styles';
 import { itemsMenu } from '../lib/itemsMenu';
 
 export const Menu = () => {
@@ -12,12 +20,12 @@ export const Menu = () => {
   return (
     <SMenu>
       {isTablets && <SMenuAntd items={itemsMenu} />}
-      {!isTablets && <Tabs defaultActiveKey="1" items={itemsMenu} />}
+      {!isTablets && <STabs defaultActiveKey="1" items={itemsMenu} />}
       <SDivider />
       <SFutures>
-        <Search />
-        <Cart />
-        <User />
+        <SearchIcon />
+        <CartIcon />
+        <UserIcon />
       </SFutures>
     </SMenu>
   );

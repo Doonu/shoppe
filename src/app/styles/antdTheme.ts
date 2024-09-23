@@ -17,6 +17,11 @@ export const antdTheme = (theme: DefaultTheme): ThemeConfig => ({
       itemSelectedBg: 'transparent',
       itemSelectedColor: theme.core.colorSecondary,
     },
+    Tabs: {
+      itemColor: theme.core.colorPrimary,
+      itemSelectedColor: theme.core.colorPrimary,
+      colorBorderSecondary: 'transparent',
+    },
     Button: {
       defaultBg: theme.core.colorBackground,
     },

@@ -34,5 +34,9 @@ declare module 'styled-components' {
       maxLaptops: string;
       maxDesktops: string;
     };
+    size: {
+      headerL: string;
+      headerS: string;
+    };
   }
 }

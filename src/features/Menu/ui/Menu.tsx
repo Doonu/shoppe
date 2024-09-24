@@ -1,5 +1,4 @@
 import { useDevice } from '@shared/hooks';
-import { Tabs } from '@shared/ui';
 import React from 'react';
 
 import {

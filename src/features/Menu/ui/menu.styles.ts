@@ -1,7 +1,7 @@
-import { Menu as MenuAntd } from 'antd';
-import styled from 'styled-components';
 import { Cart, Search, User } from '@shared/assets';
 import { Tabs } from '@shared/ui';
+import { Menu as MenuAntd } from 'antd';
+import styled from 'styled-components';
 
 export const SFutures = styled.div`
   display: flex;

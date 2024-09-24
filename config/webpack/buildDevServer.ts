@@ -10,9 +10,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     open: true,
     historyApiFallback: true,
     compress: true,
-    static: {
-      directory: path.join(__dirname, 'build'),
-    },
     hot: true,
   };
 }

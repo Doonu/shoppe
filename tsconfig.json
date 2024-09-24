@@ -22,7 +22,7 @@
       "module": "CommonJS"
     }
   },
-  "include": ["src/**/*", "./jest.config.ts"],
+  "include": ["src/**/*", "./jest.config.ts", "webpack.config.ts"],
   "types": ["node", "jest", "@testing-library/jest-dom"],
   "extends": "./tsconfig.paths.json"
 }

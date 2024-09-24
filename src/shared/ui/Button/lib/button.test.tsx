@@ -1,6 +1,6 @@
+import { Button } from '@shared/ui';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { Button } from '@shared/ui';
 
 export const ButtonTestId = 'Button';
 

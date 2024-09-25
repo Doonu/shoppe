@@ -24,7 +24,7 @@ const Breakpoints: DefaultTheme['breakpoints'] = {
 };
 const size: DefaultTheme['size'] = {
   headerL: '104px',
-  headerS: '50px',
+  headerS: '52px',
 };
 
 const lightCore: DefaultTheme['core'] = {

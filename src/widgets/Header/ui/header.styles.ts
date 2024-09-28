@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Logo } from '@shared/assets';
+import { Cart, Logo } from '@shared/assets';
 import { BurgerMenu } from '@shared/assets';
 
 export const SHeader = styled.div`
@@ -31,6 +31,14 @@ export const SLogo = styled(Logo).attrs(({ theme }) => ({
 
 export const SBurgerMenuIcon = styled(BurgerMenu).attrs(({ theme }) => ({
   color: theme.core.colorPrimary,
-}))`
-  padding-bottom: 5px;
+}))``;
+
+export const CartIcon = styled(Cart).attrs(({ theme }) => ({
+  color: theme.core.colorPrimary,
+}))``;
+
+export const SStrippedMenu = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
 `;

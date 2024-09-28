@@ -3,6 +3,7 @@ import React from 'react';
 
 import {
   CartIcon,
+  LogoutIcon,
   SDivider,
   SearchIcon,
   SFutures,
@@ -11,20 +12,32 @@ import {
   STabs,
   UserIcon,
 } from './menu.styles';
-import { itemsMenu } from '../lib/itemsMenu';
+import { itemsMenu, itemsMobileMenu } from '../lib/itemsMenu';
+import MenuItemIcon from './MenuItemIcon/MenuItemIcon';
 
 export const Menu = () => {
   const { isTablets } = useDevice();
 
   return (
     <SMenu>
-      {isTablets && <SMenuAntd items={itemsMenu} />}
+      {isTablets && <SMenuAntd items={itemsMobileMenu} />}
       {!isTablets && <STabs defaultActiveKey="1" items={itemsMenu} />}
       <SDivider />
       <SFutures>
-        <SearchIcon />
-        <CartIcon />
-        <UserIcon />
+        {!isTablets && (
+          <>
+            <SearchIcon />
+            <CartIcon />
+            <UserIcon />
+          </>
+        )}
+
+        {isTablets && (
+          <>
+            <MenuItemIcon icon={<UserIcon />} description="My account" />
+            <MenuItemIcon icon={<LogoutIcon />} description="Logout" />
+          </>
+        )}
       </SFutures>
     </SMenu>
   );

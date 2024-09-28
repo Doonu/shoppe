@@ -1,12 +1,19 @@
 import { Menu } from '@features/Menu';
 import React from 'react';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 
-import { SDrawer } from './burgerMenu.styles';
+import { SBurgerMenu, SBurgerMenuCloseIcon, SDrawer, SHeader } from './burgerMenu.styles';
 import { BurgerMenuProps } from '../../model/burgerMenu.types';
+import HeaderMobile from '../HeaderMobile';
 
 const BurgerMenu = ({ onClose, isOpen }: BurgerMenuProps) => (
-  <SDrawer open={isOpen} onClose={onClose}>
-    <Menu />
+  <SDrawer open={isOpen}>
+    <SBurgerMenu>
+      <SHeader>
+        <HeaderMobile iconDrawer={<SBurgerMenuCloseIcon icon={faClose} onClick={onClose} />} />
+      </SHeader>
+      <Menu />
+    </SBurgerMenu>
   </SDrawer>
 );
 

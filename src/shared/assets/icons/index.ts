@@ -3,3 +3,4 @@ export * from './Search';
 export * from './Cart';
 export * from './User';
 export * from './BurgerMenu';
+export * from './Logout';

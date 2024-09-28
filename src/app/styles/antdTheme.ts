@@ -13,9 +13,14 @@ export const antdTheme = (theme: DefaultTheme): ThemeConfig => ({
     Select: {
       colorBgContainer: theme.core.colorSecondary,
     },
+    Drawer: {
+      colorBgElevated: theme.core.colorBackground,
+    },
     Menu: {
+      colorBgContainer: theme.core.colorBackground,
       itemSelectedBg: 'transparent',
       itemSelectedColor: theme.core.colorSecondary,
+      itemColor: theme.core.colorPrimary,
     },
     Tabs: {
       itemColor: theme.core.colorPrimary,

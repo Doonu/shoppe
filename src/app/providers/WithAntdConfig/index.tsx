@@ -1,13 +1,14 @@
 import { antdTheme } from '@app/styles';
-import { selectorThemeOptions } from '@entities/theme';
+import { selectorThemeType } from '@entities/theme';
 import { useAppSelector } from '@shared/hooks';
 import { ConfigProvider } from 'antd';
 import React, { FC, PropsWithChildren } from 'react';
+import { themePick } from '@entities/theme/lib/themePick';
 
 const WithAntdConfig: FC<PropsWithChildren> = ({ children }) => {
-  const theme = useAppSelector(selectorThemeOptions);
+  const theme = useAppSelector(selectorThemeType);
 
-  return <ConfigProvider theme={antdTheme(theme)}>{children}</ConfigProvider>;
+  return <ConfigProvider theme={antdTheme(themePick(theme))}>{children}</ConfigProvider>;
 };
 
 export default WithAntdConfig;

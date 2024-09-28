@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack serve --env port=3000",
+    "start": "webpack serve --env port=3001",
     "lint": "eslint",
     "clear": "yarn cache clean && rm -rf ./node_modules/ yarn.lock && yarn",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json}\"",

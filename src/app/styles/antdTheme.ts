@@ -28,7 +28,9 @@ export const antdTheme = (theme: DefaultTheme): ThemeConfig => ({
       colorBorderSecondary: 'transparent',
     },
     Button: {
-      defaultBg: theme.core.colorBackground,
+      colorBgContainer: theme.core.colorBackground,
+      colorText: theme.core.colorTextPrimary,
+      borderRadius: 4,
     },
   },
 });

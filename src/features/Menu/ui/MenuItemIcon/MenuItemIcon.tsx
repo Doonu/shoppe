@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from 'react';
+
 import { SDescription, SMenuItem } from './menuItemIcon.styles';
 
 interface MenuItemIconProps {

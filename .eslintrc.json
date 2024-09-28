@@ -29,6 +29,7 @@
     "react",
     "@typescript-eslint",
     "import",
+    "simple-import-sort",
     "prettier"
   ],
   "overrides": [
@@ -36,7 +37,6 @@
       "files": ["webpack.config.ts"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",
-        "max-len": "off",
         "import/no-extraneous-dependencies": [
           "error",
           {
@@ -45,6 +45,12 @@
         ],
         "import/no-cycle": "off",
         "import/order": "off"
+      }
+    },
+    {
+      "files": ["src/shared/assets/svg/*.tsx"],
+      "rules": {
+        "max-len": "off"
       }
     }
   ],
@@ -60,13 +66,15 @@
     }
   },
   "rules": {
-    "react/no-unstable-nested-components": "off",
+    "react/jsx-no-duplicate-props": "off",
+    "react/jsx-one-expression-per-line": "off",
     "object-curly-newline": "off",
     "@typescript-eslint/no-unsafe-call": "off",
-    "@typescript-eslint/unbound-method": "off",
-    "implicit-arrow-linebreak": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "react/no-unstable-nested-components": "off",
     "@typescript-eslint/no-floating-promises": "off",
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
@@ -75,7 +83,6 @@
     "react/jsx-key": "error",
     "react/destructuring-assignment": "off",
     "import/extensions": "off",
-    "no-param-reassign":"off",
     "import/prefer-default-export": "off",
     "no-mixed-spaces-and-tabs": "error",
     "no-console": "warn",
@@ -88,11 +95,19 @@
     "jsx-a11y/no-static-element-interactions": "off",
     "react/jsx-no-useless-fragment": "off",
     "consistent-return": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     "prettier/prettier": [
       "error",
       {
         "endOfLine": "auto",
         "singleQuote": true
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 100
       }
     ],
     "import/order": [

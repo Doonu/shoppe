@@ -8,5 +8,9 @@
   "bracketSpacing": true,
   "arrowParens": "always",
   "proseWrap": "never",
+  "importOrder": ["^[a-z]", "^@", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
   "htmlWhitespaceSensitivity": "strict"
 }
+

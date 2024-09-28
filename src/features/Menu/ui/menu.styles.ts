@@ -1,4 +1,4 @@
-import { Cart, Search, User, Logout } from '@shared/assets';
+import { Cart, Logout, Search, User } from '@shared/assets';
 import { Tabs } from '@shared/ui';
 import { Menu as MenuAntd } from 'antd';
 import styled from 'styled-components';

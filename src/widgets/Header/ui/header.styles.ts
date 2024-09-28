@@ -1,6 +1,5 @@
+import { BurgerMenu, Cart, Logo } from '@shared/assets';
 import styled from 'styled-components';
-import { Cart, Logo } from '@shared/assets';
-import { BurgerMenu } from '@shared/assets';
 
 export const SHeader = styled.div`
   display: flex;

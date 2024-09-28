@@ -3,7 +3,7 @@ import { useDevice } from '@shared/hooks';
 import { useState } from 'react';
 
 import BurgerMenu from './BurgerMenu';
-import { SBurgerMenuIcon, SHeader, SLogo, CartIcon, SStrippedMenu } from './header.styles';
+import { SBurgerMenuIcon, SHeader, SLogo } from './header.styles';
 import HeaderMobile from './HeaderMobile';
 
 const Header = () => {

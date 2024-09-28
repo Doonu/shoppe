@@ -1,7 +1,8 @@
+import './shared/config/translate';
+
 import ReactDOM from 'react-dom/client';
 
 import App from './app';
-import './shared/config/translate';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 

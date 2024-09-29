@@ -14,7 +14,8 @@
     "airbnb/hooks",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:storybook/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -34,7 +35,9 @@
   ],
   "overrides": [
     {
-      "files": ["webpack.config.ts"],
+      "files": [
+        "webpack.config.ts"
+      ],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",
         "import/no-extraneous-dependencies": [
@@ -48,7 +51,9 @@
       }
     },
     {
-      "files": ["src/shared/assets/svg/*.tsx"],
+      "files": [
+        "src/shared/assets/svg/*.tsx"
+      ],
       "rules": {
         "max-len": "off"
       }
@@ -57,8 +62,15 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "paths": [
+          "src"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
       }
     },
     "react": {
@@ -117,14 +129,21 @@
           "builtin",
           "external",
           "internal",
-          ["parent", "sibling", "index"]
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
         ],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true
         },
-        "pathGroupsExcludedImportTypes": ["builtin", "external"]
+        "pathGroupsExcludedImportTypes": [
+          "builtin",
+          "external"
+        ]
       }
     ],
     "import/no-extraneous-dependencies": "off",

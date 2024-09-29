@@ -1,6 +1,6 @@
 import { antdTheme } from '@app/styles';
 import { selectorThemeType } from '@entities/theme';
-import { themePick } from '@entities/theme/lib/themePick';
+import { themePick } from '@entities/theme';
 import { useAppSelector } from '@shared/hooks';
 import { ConfigProvider } from 'antd';
 import React, { FC, PropsWithChildren } from 'react';

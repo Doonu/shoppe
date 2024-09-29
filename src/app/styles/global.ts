@@ -115,4 +115,8 @@ export const GlobalStyles = createGlobalStyle`
     table {
         width: 100%;
     }
+
+    & .ant-select-dropdown {
+        box-shadow: ${({ theme }) => theme && `0px 4px 10px ${theme.core.boxShadow}`}
+    }
 `;

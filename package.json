@@ -2,11 +2,10 @@
   "name": "webpack-template",
   "version": "1.0.0",
   "main": "index.ts",
-  "repository": "https://gl.itecorp.ru/iteco_customer/frontend_customers_2.0.git",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack serve --env port=3001",
+    "start": "webpack serve --env port=3002",
     "lint": "eslint",
     "clear": "yarn cache clean && rm -rf ./node_modules/ yarn.lock && yarn",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json}\"",

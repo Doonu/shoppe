@@ -1,9 +1,9 @@
 import { OptionsTheme, selectorThemeType } from '@entities/theme';
 import { useAppDispatch, useAppSelector } from '@shared/hooks';
-import { Select } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import { switchTheme, ThemeVariant } from '@entities/theme';
+import { Select } from '@shared/ui';
 
 export const ThemeSwitcher = () => {
   const dispatch = useAppDispatch();

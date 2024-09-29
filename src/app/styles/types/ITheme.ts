@@ -14,6 +14,7 @@ declare module 'styled-components' {
       colorBackground: string;
       colorSurface: string;
       colorDivider: string;
+      boxShadow: string;
     };
     borderRadius: {
       roundedNon: string;

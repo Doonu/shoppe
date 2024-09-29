@@ -39,6 +39,8 @@ const lightCore: DefaultTheme['core'] = {
   colorSystem: 'red',
   colorBackground: '#FFFFFF',
   colorDivider: 'red',
+
+  boxShadow: '#cecece',
 };
 
 const darkCore: DefaultTheme['core'] = {
@@ -53,6 +55,8 @@ const darkCore: DefaultTheme['core'] = {
   colorSystem: 'red',
   colorBackground: '#000000',
   colorDivider: 'red',
+
+  boxShadow: '#373535',
 };
 
 export const lightTheme: DefaultTheme = {

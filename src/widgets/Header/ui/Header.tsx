@@ -9,7 +9,7 @@ import HeaderMobile from './HeaderMobile';
 const Header = () => {
   const { isTablets } = useDevice();
 
-  const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(true);
+  const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
 
   const handlerOpenMenu = () => {
     setIsOpenBurgerMenu((prev) => !prev);

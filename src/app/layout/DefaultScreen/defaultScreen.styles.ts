@@ -9,10 +9,11 @@ export const SDefaultScreen = styled.div`
 
 export const SLayout = styled(Layout)`
   display: grid;
-  justify-items: center;
   height: max-content;
   padding: 16px;
   background-color: inherit;
+  max-width: ${({ theme }) => theme.breakpoints.maxDesktops};
+  margin: 0 auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.maxTablets}) {
     padding: 0 10px;

@@ -1,12 +1,12 @@
 import { TabsProps } from 'antd';
 
-export const itemsMenu: TabsProps['items'] = [
+export const itemsMenu = [
   {
-    key: '1',
+    key: 'shop',
     label: 'Shop',
   },
   {
-    key: '2',
+    key: 'blog',
     label: 'Blog',
   },
   {
@@ -17,19 +17,19 @@ export const itemsMenu: TabsProps['items'] = [
 
 export const itemsMobileMenu: TabsProps['items'] = [
   {
-    key: '1',
+    key: 'home',
     label: 'Home',
   },
   {
-    key: '2',
+    key: 'shop',
     label: 'Shop',
   },
   {
-    key: '3',
+    key: 'about',
     label: 'About',
   },
   {
-    key: '4',
+    key: 'blog',
     label: 'Blog',
   },
   {

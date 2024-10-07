@@ -1,6 +1,7 @@
+import { useState } from 'react';
+
 import { Menu } from '@features/Menu';
 import { useDevice } from '@shared/hooks';
-import { useState } from 'react';
 
 import BurgerMenu from './BurgerMenu';
 import { SBurgerMenuIcon, SHeader, SLogo } from './header.styles';

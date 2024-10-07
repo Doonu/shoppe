@@ -1,9 +1,10 @@
+import { FC, PropsWithChildren } from 'react';
+
 import { GlobalStyles } from '@app/styles';
 import dayjs from 'dayjs';
 import ru from 'dayjs/locale/ru';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
-import { FC, PropsWithChildren } from 'react';
 
 import WithAntdConfig from './WithAntdConfig';
 import WithPersist from './WithPersist';

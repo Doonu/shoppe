@@ -19,6 +19,10 @@ export const antdTheme = (theme: DefaultTheme): ThemeConfig => ({
       colorTextQuaternary: theme.core.colorPrimary,
       colorText: theme.core.colorPrimary,
       colorBgElevated: theme.core.colorBackground,
+      activeOutlineColor: 'none',
+    },
+    Input: {
+      activeShadow: 'none',
     },
     Drawer: {
       colorBgElevated: theme.core.colorBackground,

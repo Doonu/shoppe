@@ -14,7 +14,7 @@ const HomePage = () => {
   const toggle = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     navigate({
-      pathname: '/order/23',
+      pathname: '/shop/23',
     });
   };
 

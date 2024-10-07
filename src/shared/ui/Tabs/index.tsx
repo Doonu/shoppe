@@ -1,5 +1,6 @@
-import { TabsProps } from 'antd';
 import React from 'react';
+
+import { TabsProps } from 'antd';
 
 import { STabs } from './tabs.styles';
 

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { Slider } from 'antd';
+import styled from 'styled-components';
 
 export const SSlider = styled(Slider)`
   &.ant-slider-handle .ant-slider-handle-2 {

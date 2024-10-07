@@ -1,9 +1,10 @@
-import { themePick } from '@entities/theme';
-import { ThemeProvider } from 'styled-components';
-import { ConfigProvider } from 'antd';
-import { antdTheme } from '@app/styles';
 import React, { FC } from 'react';
+
+import { antdTheme } from '@app/styles';
+import { themePick } from '@entities/theme';
 import type { StoryContext, StoryFn } from '@storybook/react';
+import { ConfigProvider } from 'antd';
+import { ThemeProvider } from 'styled-components';
 
 interface ThemeDecoratorProps {
   Story: StoryFn;

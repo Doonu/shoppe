@@ -1,12 +1,14 @@
-import NotFoundPage from '@pages/NotFoundPage';
 import React, { lazy } from 'react';
+
+import NotFoundPage from '@pages/NotFoundPage';
+import { ERoutes } from '@shared/config';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { ERoutes } from './ERoutes';
 import DefaultScreen from '../layout/DefaultScreen';
 
 const HomePageLazy = lazy(() => import('../../pages/HomePage'));
 const AuthPageLazy = lazy(() => import('../../pages/AuthPage'));
+const ShopPageLazy = lazy(() => import('../../pages/ShopPage'));
 
 export const publicRoutes = createBrowserRouter([
   {
@@ -28,12 +30,12 @@ export const privateRoutes = createBrowserRouter([
         element: <HomePageLazy />,
       },
       {
-        path: '/order',
-        element: <div>order</div>,
+        path: ERoutes.SHOP_PAGE,
+        element: <ShopPageLazy />,
       },
       {
-        path: '/order/:id',
-        element: <div>order id</div>,
+        path: '/shop/:id',
+        element: <div>shop id</div>,
       },
     ],
   },

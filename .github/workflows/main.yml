@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Шаг 1: Проверка кода
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Шаг 2: Установка Node.js и зависимостей
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Укажи нужную версию Node.js
+
+      - name: Install dependencies
+        run: npm install
+
+      # Шаг 3: Запуск ESLint для линтинга
+      - name: Run ESLint
+        run: npm run lint
+
+      # Шаг 4: Запуск тестов
+      - name: Run tests
+        run: npm test
+
+  # Дополнительная работа: Деплой (например, на версию main)
+  deploy:
+    if: github.ref == 'refs/heads/main'  # Запускать

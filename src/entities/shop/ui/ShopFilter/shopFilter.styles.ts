@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const SShopFilter = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
 `;
 

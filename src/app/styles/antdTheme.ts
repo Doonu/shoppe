@@ -20,9 +20,11 @@ export const antdTheme = (theme: DefaultTheme): ThemeConfig => ({
       colorText: theme.core.colorPrimary,
       colorBgElevated: theme.core.colorBackground,
       activeOutlineColor: 'none',
+      controlHeight: 45,
     },
     Input: {
       activeShadow: 'none',
+      controlHeight: 45,
     },
     Drawer: {
       colorBgElevated: theme.core.colorBackground,

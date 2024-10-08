@@ -36,7 +36,8 @@
   "overrides": [
     {
       "files": [
-        "webpack.config.ts"
+        "webpack.config.ts",
+        "jest.environment.js"
       ],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",

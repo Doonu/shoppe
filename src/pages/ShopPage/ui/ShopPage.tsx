@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ShopFilter } from '@entities/shop';
+import { ShopList } from '@widgets/ShopList';
 
 import { SShop, SShopPage, STitle } from './shopPage.styles';
 
@@ -9,7 +10,7 @@ const ShopPage = () => (
     <STitle>Shop The Latest</STitle>
     <SShop>
       <ShopFilter />
-      <div>List</div>
+      <ShopList />
     </SShop>
   </SShopPage>
 );

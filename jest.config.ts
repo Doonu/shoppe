@@ -5,7 +5,7 @@ const config: Config = {
   collectCoverage: false,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
-  testEnvironment: './jest.environment.js',
+  testEnvironment: 'jest-environment-jsdom',
   testEnvironmentOptions: {
     customExportConditions: [''],
   },

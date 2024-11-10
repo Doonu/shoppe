@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
-
 import { formatNumber, IShop } from '@entities/shop';
+import React, { FC } from 'react';
 
 import { SImage, SPrice, SShopCard, STitle } from './shopCard.styles';
 

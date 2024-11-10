@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { IShop, ShopCard } from '@entities/shop';
+import React from 'react';
 
 import { SList } from './shopList.styles';
 

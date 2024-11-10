@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { useDevice } from '@shared/hooks';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -15,7 +14,6 @@ import {
   UserIcon,
 } from './menu.styles';
 import MenuItemIcon from './MenuItemIcon/MenuItemIcon';
-
 import { itemsMenu, itemsMobileMenu } from '../lib/itemsMenu';
 import { useMenuActive } from '../lib/useMenuActive';
 

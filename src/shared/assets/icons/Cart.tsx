@@ -4,7 +4,7 @@ interface LogoProps extends SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-export const Cart: FC<LogoProps> = ({ color, ...props }) => (
+export const Cart: FC<LogoProps> = ({ color }) => (
   <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
     <path
       fill={color}

@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
-
 import { SliderRangeProps } from 'antd/es/slider';
+import React, { FC } from 'react';
 
 import { SSlider } from './Slider.styles';
 

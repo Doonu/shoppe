@@ -1,7 +1,6 @@
-import React, { lazy } from 'react';
-
 import NotFoundPage from '@pages/NotFoundPage';
 import { ERoutes } from '@shared/config';
+import React, { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
 import DefaultScreen from '../layout/DefaultScreen';

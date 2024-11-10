@@ -10,14 +10,22 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   };
 
   const babelLoader = {
-    test: /\.(js, ts, tsx)$/,
+    test: /\.m?js$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
-        plugins: [['i18next-extract', { locales: ['ru', 'en'], ketAsDefaultValue: true }]],
+        cacheDirectory: true,
       },
+    },
+  };
+
+  const fontLoader = {
+    test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
+    type: 'asset/resource',
+    generator: {
+      filename: 'static/fonts/[name].[contenthash].[ext]',
     },
   };
 
@@ -26,20 +34,28 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     use: [
       {
         loader: 'file-loader',
-        options: {
-          configFile: 'tsconfig.json',
-        },
+        options: {},
       },
     ],
   };
 
   const typescriptLoader = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
+    use: {
+      loader: 'ts-loader',
+      options: {
+        transpileOnly: !!options.local,
+      },
+    },
     exclude: /node_modules/,
   };
 
   const cssLoader = {
+    test: /\.css$/i,
+    use: [options.isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
+  };
+
+  const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
       options.isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -48,5 +64,25 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  return [typescriptLoader, fileLoader, svgLoader, babelLoader, cssLoader];
+  const reactRefreshLoader = {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        plugins: ['react-refresh/babel'],
+      },
+    },
+  };
+
+  return [
+    fileLoader,
+    fontLoader,
+    svgLoader,
+    babelLoader,
+    typescriptLoader,
+    cssLoader,
+    scssLoader,
+    reactRefreshLoader,
+  ];
 }

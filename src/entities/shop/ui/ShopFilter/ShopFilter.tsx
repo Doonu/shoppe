@@ -1,7 +1,6 @@
-import React from 'react';
-
 import { Select, Slider } from '@shared/ui';
 import { Input, Switch } from 'antd';
+import React from 'react';
 
 import { SGroupSelect, SShopFilter, SSwitch } from './shopFilter.styles';
 

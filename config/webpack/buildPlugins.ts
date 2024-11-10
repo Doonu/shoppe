@@ -1,12 +1,34 @@
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import dotenv from 'dotenv';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 
 import { BuildOptions } from './build.types';
 
-export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+export function buildPlugins({
+  paths,
+  local,
+  isDevelopment,
+}: BuildOptions): webpack.WebpackPluginInstance[] {
+  const envFile = isDevelopment ? 'production' : 'development';
+  const envFilePath = local ? './.env.development.local' : `./.env.${envFile}`;
+  const env = dotenv.config({ path: envFilePath }).parsed || {};
+
+  const envKeys = Object.keys(env).reduce(
+    (prev, next) => {
+      prev[`process.env.${next}`] = JSON.stringify(env[next]);
+      return prev;
+    },
+    {} as { [key: string]: string }
+  );
+
+  const plugins = [
+    new webpack.ids.DeterministicChunkIdsPlugin({
+      maxLength: 5,
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -22,10 +44,20 @@ export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInst
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
+      filename: 'static/css/[name].[contenthash:8].css',
+      chunkFilename: 'static/css/[name].[contenthash:8].css',
     }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser.js',
+    }),
+    new webpack.DefinePlugin(envKeys),
   ];
+
+  if (local) {
+    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new ForkTsCheckerWebpackPlugin());
+  }
+
+  return plugins;
 }

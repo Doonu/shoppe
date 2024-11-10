@@ -1,7 +1,6 @@
-import { FC, PropsWithChildren } from 'react';
-
 import { selectorThemeType, themePick } from '@entities/theme';
 import { useAppSelector } from '@shared/hooks';
+import { FC, PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 const WithTheme: FC<PropsWithChildren> = ({ children }) => {

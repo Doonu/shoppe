@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
-
 import { SelectProps } from 'antd';
+import React, { FC } from 'react';
 
 import { SSelect } from './select.styles';
 

@@ -7,7 +7,7 @@ import DefaultScreen from '../layout/DefaultScreen';
 
 const HomePageLazy = lazy(() => import('../../pages/HomePage'));
 const AuthPageLazy = lazy(() => import('../../pages/AuthPage'));
-const ShopPageLazy = lazy(() => import('../../pages/ShopPage'));
+const ShopPageLazy = lazy(() => import('@pages/ProductPage/ui/ProductPage'));
 
 export const publicRoutes = createBrowserRouter([
   {

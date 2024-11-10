@@ -1,9 +1,9 @@
-import { IShop, ShopCard } from '@entities/shop';
+import { ProductCard, IProduct } from '@entities/product';
 import React from 'react';
 
-import { SList } from './shopList.styles';
+import { SList } from './productList.styles';
 
-const data: IShop[] = [
+const data: IProduct[] = [
   {
     id: 1,
     sale: 21,
@@ -34,10 +34,10 @@ const data: IShop[] = [
   },
 ];
 
-export const ShopList = () => (
+export const ProductList = () => (
   <SList>
     {data.map((item) => (
-      <ShopCard key={item.id} {...item} />
+      <ProductCard key={item.id} {...item} />
     ))}
   </SList>
 );

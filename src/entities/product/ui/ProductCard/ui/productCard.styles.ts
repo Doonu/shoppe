@@ -1,7 +1,7 @@
 import { Image } from 'antd';
 import styled from 'styled-components';
 
-export const SShopCard = styled.div`
+export const SProductCard = styled.div`
   display: grid;
 `;
 

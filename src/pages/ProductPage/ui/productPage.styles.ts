@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const SShopPage = styled.div`
+export const SProductPage = styled.div`
   padding: 80px 0 0 0;
 `;
 
-export const SShop = styled.div`
+export const SProduct = styled.div`
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 36px;

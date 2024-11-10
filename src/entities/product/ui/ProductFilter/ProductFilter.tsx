@@ -2,10 +2,10 @@ import { Select, Slider } from '@shared/ui';
 import { Input, Switch } from 'antd';
 import React from 'react';
 
-import { SGroupSelect, SShopFilter, SSwitch } from './shopFilter.styles';
+import { SGroupSelect, SProductFilter, SSwitch } from './productFilter.styles';
 
-export const ShopFilter = () => (
-  <SShopFilter>
+export const ProductFilter = () => (
+  <SProductFilter>
     <Input placeholder="Search..." />
     <SGroupSelect>
       <Select placeholder="Shop By" />
@@ -20,5 +20,5 @@ export const ShopFilter = () => (
       In stock
       <Switch />
     </SSwitch>
-  </SShopFilter>
+  </SProductFilter>
 );

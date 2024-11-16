@@ -68,18 +68,19 @@ jobs:
     name: Deploy Application
     runs-on: ubuntu-latest
     needs: build
-#    if: github.event_name == 'workflow_dispatch'
     steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v2
-#
-#      - name: Install sshpass
-#        run: sudo apt-get update && sudo apt-get install -y sshpass
-
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
           name: build
+
+      - name: List all files after download
+        run: ls -la
+
+      - name: Find and rename downloaded artifact
+        run: |
+          FILE=$(ls | grep ".zip")
+          mv "$FILE" build.zip
 
       - name: Unzip build artifact
         run: unzip build.zip -d ./build

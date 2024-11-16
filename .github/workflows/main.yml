@@ -1,9 +1,12 @@
 name: Linting, testing, building
+
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       environment:
@@ -11,41 +14,68 @@ on:
         required: true
         default: 'prod'
 
+
 jobs:
-  build:
+  test:
+    name: Test (Linting & Unit Tests)
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 17.x ]
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Starting Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: install modules
+      - name: Install dependencies
         run: npm install
 
-      - name: linting
+      - name: Lint code
         run: npm run lint
 
-      - name: testing
+      - name: Run unit tests
         run: npm run test:unit
 
-      - name: build production project
-        run: npm run build:prod
-
-  deploy:
+  build:
+    name: Build Application
     runs-on: ubuntu-latest
-    needs: build
-    if: github.event_name == 'workflow_dispatch'
+    needs: test # Выполняется только после успешного завершения тестов
+    strategy:
+      matrix:
+        node-version: [17.x]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build production project
+        run: npm run build:prod
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: ./build
+
+  deploy:
+    name: Deploy Application
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'workflow_dispatch'
+    steps:
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:

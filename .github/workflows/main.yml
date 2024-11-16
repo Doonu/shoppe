@@ -74,20 +74,6 @@ jobs:
         with:
           name: build
 
-      - name: List all files after download
-        run: ls -la
-
-      - name: Find and rename downloaded artifact
-        run: |
-          FILE=$(ls | grep ".zip")
-          mv "$FILE" build.zip
-
-      - name: Unzip build artifact
-        run: unzip build.zip -d ./build
-
-      - name: Verify build directory after download
-        run: ls -la ./build
-
       - name: Deploy to server with password
         env:
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
@@ -96,4 +82,4 @@ jobs:
           TARGET_DIR: ${{ secrets.TARGET_DIR }}
         run: |
           sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
-          sshpass -p "$SERVER_PASSWORD" rsync -avz --rsh="ssh -o StrictHostKeyChecking=no" ./build/ $SERVER_USER@$SERVER_HOST:$TARGET_DIR
+          sshpass -p "$SERVER_PASSWORD" rsync -avz --rsh="ssh -o StrictHostKeyChecking=no" ./ $SERVER_USER@$SERVER_HOST:$TARGET_DIR

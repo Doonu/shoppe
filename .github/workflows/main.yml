@@ -79,6 +79,9 @@ jobs:
         with:
           name: build
 
+      - name: Verify build directory after download
+        run: ls -la ./build
+
       - name: Deploy to server with password
         env:
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}

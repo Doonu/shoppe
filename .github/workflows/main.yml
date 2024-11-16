@@ -49,6 +49,9 @@ jobs:
         with:
           node-version: 17
 
+      - name: Verify installed dependencies
+        run: npm list
+
       - name: Install dependencies
         run: npm install
 
@@ -56,33 +59,6 @@ jobs:
         run: npm run build:prod
 
       - name: Verify build directory
-        run: ls -la ./build
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build
-          path: ./build
-          retention-days: 7
-
-  deploy:
-    name: Deploy Application
-    runs-on: ubuntu-latest
-    needs: build
-#    if: github.event_name == 'workflow_dispatch'
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install sshpass
-        run: sudo apt-get update && sudo apt-get install -y sshpass
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: build
-
-      - name: Verify build directory after download
         run: ls -la ./build
 
       - name: Deploy to server with password
@@ -94,3 +70,41 @@ jobs:
         run: |
           sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
           sshpass -p "$SERVER_PASSWORD" rsync -avz --rsh="ssh -o StrictHostKeyChecking=no" ./build/ $SERVER_USER@$SERVER_HOST:$TARGET_DIR
+
+
+#      - name: Upload build artifacts
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: build
+#          path: ./build
+#          retention-days: 7
+
+#  deploy:
+#    name: Deploy Application
+#    runs-on: ubuntu-latest
+#    needs: build
+##    if: github.event_name == 'workflow_dispatch'
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
+#
+#      - name: Install sshpass
+#        run: sudo apt-get update && sudo apt-get install -y sshpass
+#
+#      - name: Download build artifacts
+#        uses: actions/download-artifact@v4
+#        with:
+#          name: build
+#
+#      - name: Verify build directory after download
+#        run: ls -la ./build
+
+#      - name: Deploy to server with password
+#        env:
+#          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+#          SERVER_USER: ${{ secrets.SERVER_USER }}
+#          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+#          TARGET_DIR: ${{ secrets.TARGET_DIR }}
+#        run: |
+#          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
+#          sshpass -p "$SERVER_PASSWORD" rsync -avz --rsh="ssh -o StrictHostKeyChecking=no" ./build/ $SERVER_USER@$SERVER_HOST:$TARGET_DIR

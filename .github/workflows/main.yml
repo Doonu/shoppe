@@ -81,6 +81,9 @@ jobs:
         with:
           name: build
 
+      - name: Unzip build artifact
+        run: unzip build.zip -d ./build
+
       - name: Verify build directory after download
         run: ls -la ./build
 

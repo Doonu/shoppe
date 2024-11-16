@@ -49,11 +49,11 @@ jobs:
         with:
           node-version: 17
 
-      - name: Verify installed dependencies
-        run: npm list
-
       - name: Install dependencies
         run: npm install
+
+      - name: Verify installed dependencies
+        run: npm list
 
       - name: Build production project
         run: npm run build:prod

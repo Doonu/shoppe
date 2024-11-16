@@ -4,6 +4,13 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Выберите окружение для деплоя (prod, staging)'
+        required: true
+        default: 'prod'
+
 jobs:
   pipeline:
     runs-on: ubuntu-latest
@@ -13,15 +20,32 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: install modules
         run: npm install
+
       - name: build production project
         run: npm run build:prod
+
       - name: linting
         run: npm run lint
+
       - name: testing
         run: npm run test:unit
+
+      - name: deploy
+        env:
+          SSH_KEY: fffff
+          SERVER_USER: root
+          SERVER_HOST: http://45.10.43.121
+          TARGET_DIR: /var/www/shop_app_frontend
+        run: |
+          echo "$SSH_KEY" > deploy_key.pem
+          chmod 600 deploy_key.pem
+          rsync -avz -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./build/ $SERVER_USER@$SERVER_HOST:$TARGET_DIR
+          rm deploy_key.pem

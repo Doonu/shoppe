@@ -68,19 +68,23 @@ jobs:
     needs: build
 #    if: github.event_name == 'workflow_dispatch'
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
           name: build
 
-      - name: Deploy to server
+      - name: Deploy to server with password
         env:
-          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           TARGET_DIR: ${{ secrets.TARGET_DIR }}
         run: |
-          echo "$SSH_KEY" > deploy_key.pem
-          chmod 600 deploy_key.pem
-          rsync -avz -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./build/ $SERVER_USER@$SERVER_HOST:$TARGET_DIR
-          rm deploy_key.pem
+          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
+          sshpass -p "$SERVER_PASSWORD" rsync -avz --rsh="ssh -o StrictHostKeyChecking=no" ./build/ $SERVER_USER@$SERVER_HOST:$TARGET_DIR
